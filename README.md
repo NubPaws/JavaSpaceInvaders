@@ -2,8 +2,8 @@
 Space Invaders in native Java code.
 Works from Java 7 and above.
 
-# Binaries
-If you want to download the game and not have to compile it you can do so from [my Google Drive](https://drive.google.com/file/d/0By7o47yfXc0LRUppbnFWbENEV1U/view?usp=sharing&resourcekey=0-faW5V3kM4ijn5qA0NB41ww)
+# Download
+If you are intereseted in playing the game you can [download it from the release page](https://github.com/NubPaws/JavaSpaceInvaders/releases/tag/Release)
 
 # Credits
 All songs credits go to [Eric Skiff](http://ericskiff.com/music/)
