@@ -1,6 +1,5 @@
-# JavaSpaceInvaders
-Space Invaders in native Java code.
-Works with Java 7 and above.
+# Java Space Invaders
+A recreation of the Space Invaders arcade game made in native Java 7. The entire project is self contained, utilizing Java's Swing and AWT libraries. The goal of this project was to build a gaming framework that is native to Java for future projects.
 
 # Download
 If you are intereseted in playing the game you can [download it from the release page](https://github.com/NubPaws/JavaSpaceInvaders/releases/tag/Release)
