@@ -1,0 +1,43 @@
+<project>
+	<property name="source" value="src" />
+	<property name="binaries" value="bin" />
+	<property name="resources" value="res" />
+	<property name="appname" value="SpaceInvaders.jar" />
+	<property name="mainclass" value="spaceinvaders.main.Executer" />
+	
+	<target name="run">
+		<exec executable="ant">
+			<arg value="build"/>
+		</exec>
+		<exec executable="ant">
+			<arg value="compile"/>
+		</exec>
+		<exec executable="ant">
+			<arg value="execute"/>
+		</exec>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${binaries}" />
+	</target>
+	
+	<target name="build">
+		<mkdir dir="${binaries}" />
+		<javac srcdir="${source}" destdir="${binaries}" />
+	</target>
+	
+	<target name="compile">
+		<jar destfile="${appname}">
+			<manifest>
+				<attribute name="Main-Class" value="${mainclass}" />
+			</manifest>
+			<fileset dir="${binaries}" />
+			<fileset dir="${source}" />
+			<fileset dir="${resources}" />
+		</jar>
+	</target>
+	
+	<target name="execute">
+		<java jar="${appname}" fork="true" />
+	</target>
+</project>

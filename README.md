@@ -1,6 +1,6 @@
 # JavaSpaceInvaders
 Space Invaders in native Java code.
-Works from Java 7 and above.
+Works with Java 7 and above.
 
 # Download
 If you are intereseted in playing the game you can [download it from the release page](https://github.com/NubPaws/JavaSpaceInvaders/releases/tag/Release)
