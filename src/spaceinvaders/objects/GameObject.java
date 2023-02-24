@@ -4,10 +4,10 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
-import spaceinvaders.extenable.Updatable;
+import spaceinvaders.extenable.Loopable;
 import spaceinvaders.handlers.Handler;
 
-public abstract class GameObject implements Updatable {
+public abstract class GameObject implements Loopable {
 	
 	protected float x, y, width, height, dx, dy;
 	protected GameObjectID id;

@@ -1,10 +1,15 @@
 package spaceinvaders.extenable;
 
-import java.awt.Graphics2D;
-
+/**
+ * An updatable is an instance that can be updated, logically.
+ */
 public interface Updatable {
 	
+	/**
+	 * Handle the logic of the instance.
+	 * 
+	 * @param tick The current tick, between 0 and GameLoop.TICKS.
+	 */
 	void update(int tick);
-	void render(Graphics2D g2d);
 	
 }

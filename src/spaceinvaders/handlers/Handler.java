@@ -3,9 +3,9 @@ package spaceinvaders.handlers;
 import java.awt.Graphics2D;
 import java.util.LinkedList;
 
-import spaceinvaders.extenable.Updatable;
+import spaceinvaders.extenable.Loopable;
 
-public class Handler<T extends Updatable> {
+public class Handler<T extends Loopable> {
 	
 	private LinkedList<T> list = new LinkedList<T>();
 	
