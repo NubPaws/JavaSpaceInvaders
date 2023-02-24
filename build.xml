@@ -6,19 +6,14 @@
 	<property name="mainclass" value="spaceinvaders.main.Executer" />
 	
 	<target name="run">
-		<exec executable="ant">
-			<arg value="build"/>
-		</exec>
-		<exec executable="ant">
-			<arg value="compile"/>
-		</exec>
-		<exec executable="ant">
-			<arg value="execute"/>
-		</exec>
+		<ant target="build" />
+		<ant target="export" />
+		<ant target="execute" />
 	</target>
 	
 	<target name="clean">
 		<delete dir="${binaries}" />
+		<delete file="${appname}" />
 	</target>
 	
 	<target name="build">
@@ -26,7 +21,7 @@
 		<javac srcdir="${source}" destdir="${binaries}" />
 	</target>
 	
-	<target name="compile">
+	<target name="export">
 		<jar destfile="${appname}">
 			<manifest>
 				<attribute name="Main-Class" value="${mainclass}" />

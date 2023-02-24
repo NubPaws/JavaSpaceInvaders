@@ -8,16 +8,28 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-@SuppressWarnings("serial")
+/**
+ * Displays a loading message while the game actually loads
+ * in the background. All the loading does is display a
+ * static window.
+ */
 public class LoadingScreen extends JFrame {
 	
 	private JLabel label;
 	
+	/**
+	 * Generate a loading screen.
+	 */
 	public LoadingScreen() {
 		setUndecorated(true);
+		/* Make sure that closing the loading screen does not EXIT_ON_CLOSE. */
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		setResizable(false);
 		
+		/* Add a basic "Loading Game..." label to a panel and add the panel to
+		 * the window to display it. Set the label to the center of the screen
+		 * using the BorderLayout.
+		 */
 		JPanel panel = new JPanel();
 		
 		label = new JLabel("Loading Game...");
