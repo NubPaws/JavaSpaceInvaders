@@ -146,20 +146,6 @@ public class GameGS extends GameState {
 		gsm.setState(GameStateID.Menu);
 	}
 	
-	///**
-	// * Draws the HUD - Heads Up Display.
-	// * 
-	// * @param g2d The graphics instance of the current buffer.
-	// */
-	//private void drawHUD(Graphics2D g2d) {
-	//	// TODO: Extrapolate to a different class that handles this.
-	//	g2d.setColor(Color.white);
-	//	g2d.drawString("Score : " + score, 0, 10);
-	//	g2d.drawString("Lives : " + player.getLives(), 0, GameBoard.HEIGHT -2);
-	//	int levelTextWidth = g2d.getFontMetrics().stringWidth("Level : " + 999);
-	//	g2d.drawString(String.format("Level : %03d", level), GameBoard.WIDTH -levelTextWidth, GameBoard.HEIGHT -2);
-	//}
-	
 	/**
 	 * Displays the end screen - the Game Over text.
 	 * 
