@@ -15,9 +15,11 @@ In order to run the game you can either download it from the [release page](http
 ### Compilation
 You'll need
 * Java 7 or higher.
-  * `apt-get install openjdk-7-jdk` (I'd recommend at least java 8).
+  * For Unix run `apt-get install default-jre`.
+  * For Windows you can download it from [Oracle's Website](https://www.oracle.com/il-en/java/technologies/downloads/).
 * Apache's ANT
-  * `apt-get install ant`
+  * For Unix run `apt-get install ant`.
+  * For Windows you can download it from [Apache's Website](https://ant.apache.org/bindownload.cgi).
 
 To compile the project:
 1. Clone the project using `git clone https://github.com/NubPaws/JavaSpaceInvaders.git`.
