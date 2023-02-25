@@ -1,6 +1,6 @@
 package spaceinvaders.gamestate;
 
-import static spaceinvaders.utils.Helper.clamp;
+import static spaceinvaders.utils.Helper.clampi;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -32,9 +32,9 @@ public class MenuGS extends GameState {
 	@Override
 	public void update(int tick) {
 		if (Keys.isPressed(Keys.DownArrow) || Keys.isPressed(Keys.S))
-			selected = (int)clamp(selected +1, 0, 2);
+			selected = clampi(selected +1, 0, 2);
 		if (Keys.isPressed(Keys.UpArrow) || Keys.isPressed(Keys.W))
-			selected = (int)clamp(selected -1, 0, 2);
+			selected = clampi(selected -1, 0, 2);
 		
 		if (Keys.isPressed(Keys.Enter) || Keys.isPressed(Keys.Space)) {
 			switch (selected) {

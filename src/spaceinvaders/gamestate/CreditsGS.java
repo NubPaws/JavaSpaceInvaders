@@ -18,7 +18,7 @@ public class CreditsGS extends GameState {
 	
 	@Override
 	public void init() {
-		y = GameBoard.HEIGHT +50;
+		y = GameBoard.HEIGHT + 50;
 		scanner = new Scanner(getClass().getResourceAsStream("/street_creds.txt"));
 		credits = new LinkedList<>();
 		String next;

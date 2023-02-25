@@ -6,6 +6,7 @@
 	<property name="mainclass" value="spaceinvaders.main.Executer" />
 	
 	<target name="run">
+		<ant target="clean" />
 		<ant target="build" />
 		<ant target="export" />
 		<ant target="execute" />

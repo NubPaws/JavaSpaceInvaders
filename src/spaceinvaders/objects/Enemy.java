@@ -6,6 +6,8 @@ import spaceinvaders.gamestate.GameGS;
 import spaceinvaders.handlers.Handler;
 import spaceinvaders.handlers.SoundHandler;
 import spaceinvaders.main.GameBoard;
+import spaceinvaders.utils.Counter;
+import spaceinvaders.utils.Flag;
 
 public class Enemy extends GameObject {
 	
@@ -13,13 +15,21 @@ public class Enemy extends GameObject {
 	
 	private short deathTimer = 0;
 	
-	public Enemy(float x, float y, GameObjectID id, Handler<GameObject> handler) {
+	private Counter score;
+	private Flag playerSprayAndPray;
+	private Counter playerSprayAndPrayTimer;
+	
+	public Enemy(float x, float y, GameObjectID id, Handler<GameObject> handler, Counter score, Player player) {
 		super(x, y, 0, 0, id, handler);
 		width = getSprite().getWidth();
 		height = getSprite().getHeight();
 		if (id == GameObjectID.EnemyBoss) {
 			dx = -1.75f;
 		}
+		
+		this.score = score;
+		this.playerSprayAndPray = player.getSprayAndPray();
+		this.playerSprayAndPrayTimer = player.getSprayAndPrayTimer();
 	}
 	
 	@Override
@@ -49,18 +59,19 @@ public class Enemy extends GameObject {
 			switch (id) {
 			case EnemyTop:
 				x -= 3; // Align explosion
-				GameGS.score += 40;
+				score.increment(40);
 				break;
 			case EnemyMid:
 				x -= 1; // Align explosion
-				GameGS.score += 20;
+				score.increment(20);
 				break;
 			case EnemyBot:
-				GameGS.score += 40;
+				score.increment(40);
 				break;
 			case EnemyBoss:
-				GameGS.score += 100;
-				Player.activateSpray();
+				score.increment(100);
+				playerSprayAndPray.on();
+				playerSprayAndPrayTimer.set(0);
 				break;
 			default:
 				break;
@@ -77,7 +88,7 @@ public class Enemy extends GameObject {
 	
 	private void tryToShoot(int tick) {
 		if ((tick == 37 || tick == 13) && rand.nextInt(100) == 37) {
-			handler.add(new Shot(x +(width /2), y +height +1, 5, handler, "Enemy"));
+			handler.add(new Shot(x + (width / 2), y + height + 1, 5, handler, "Enemy"));
 			SoundHandler.play("laser.aiff");
 		}
 	}
