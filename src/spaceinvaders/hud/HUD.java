@@ -20,8 +20,10 @@ public class HUD implements Loopable {
 	private Counter lives;
 	private Counter level;
 	
+	/* The color of the text. */
 	private Color textColor;
 	
+	/* The texts for each value. */
 	private String scoreText;
 	private String livesText;
 	private String levelText;
