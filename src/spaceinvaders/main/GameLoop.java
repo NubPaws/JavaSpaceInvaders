@@ -91,4 +91,14 @@ public class GameLoop extends Thread {
 		return fps;
 	}
 	
+	/**
+	 * Convert seconds into ticks in the game.
+	 * 
+	 * @param time the time in seconds to convert to ticks.
+	 * @return the time in ticks.
+	 */
+	public static int seconds(float time) {
+		return (int)(time * TICKS);
+	}
+	
 }

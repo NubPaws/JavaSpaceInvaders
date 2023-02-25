@@ -4,6 +4,12 @@ import java.awt.image.BufferedImage;
 
 import spaceinvaders.handlers.ImagesHandler;
 
+/**
+ * Stores information about the identification of each of the
+ * game objects and also store all of the images that are used
+ * by each of the objects in one place to avoid duplicates
+ * in the memory for the iamges used.
+ */
 public enum GameObjectID {
 	
 	EnemyTop("enemy/top"),
@@ -22,10 +28,19 @@ public enum GameObjectID {
 	
 	private final BufferedImage image;
 	
+	/**
+	 * Initializes a game object id.
+	 * @param res the sprite name relative to the res/sprite folder.
+	 */
 	GameObjectID(String res) {
 		image = ImagesHandler.get("sprites/" + res + ".png");
 	}
 	
-	public BufferedImage image() { return image; }
+	/**
+	 * @return the image associated with the id.
+	 */
+	public BufferedImage image() {
+		return image;
+	}
 	
 }

@@ -70,7 +70,7 @@ public class Enemy extends GameObject {
 				break;
 			case EnemyBoss:
 				score.increment(100);
-				playerSprayAndPray.on();
+				playerSprayAndPray.set(true);
 				playerSprayAndPrayTimer.set(0);
 				break;
 			default:
@@ -83,12 +83,12 @@ public class Enemy extends GameObject {
 	}
 	
 	private boolean wasShotByPlayer(GameObject shooterToCheck) {
-		return shooterToCheck.is(GameObjectID.Shot) && ((Shot)shooterToCheck).sender.equals("Player");
+		return shooterToCheck.is(GameObjectID.Shot) && ((Shot)shooterToCheck).sender == GameObjectID.Player;
 	}
 	
 	private void tryToShoot(int tick) {
 		if ((tick == 37 || tick == 13) && rand.nextInt(100) == 37) {
-			handler.add(new Shot(x + (width / 2), y + height + 1, 5, handler, "Enemy"));
+			handler.add(new Shot(x + (width / 2), y + height + 1, 5, handler, id));
 			SoundHandler.play("laser.aiff");
 		}
 	}
