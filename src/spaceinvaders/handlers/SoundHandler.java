@@ -10,21 +10,31 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
+/**
+ * Handles playing sounds in the game.
+ */
 public final class SoundHandler {
 	
+	/**
+	 * Plays a given sound from a file
+	 * 
+	 * @param res the file to play, where the location starts from the
+	 * resources folder.
+	 */
 	public static void play(String res) {
 		play(res, 0);
 	}
 	
-	public static void play(String... reses) {
-		Clip clip = null;
-		for (int i = 0; i < reses.length; i++) {
-			if (clip == null || !clip.isRunning()) {
-				clip = play(reses[i], 0);
-			}
-		}
-	}
-	
+	/**
+	 * Play a resource from the resources folder, and choose if
+	 * to loop and how many times.
+	 * 
+	 * @param res the file to play, where the location starts from the
+	 * resources folder.
+	 * @param loop 0 to not loop at all, >0 for the amount of times to loop.
+	 * Pass Clip.LOOP_CONTINUOUSLY to loop non stop.
+	 * @return The clip instance to be stopped if needed.
+	 */
 	public static Clip play(String res, int loop) {
 		URL soundLocation;
 		Clip clip = null;
@@ -37,7 +47,7 @@ public final class SoundHandler {
 			inputStream = AudioSystem.getAudioInputStream(soundLocation);
 			
 			clip.open(inputStream);
-			clip.loop(0);
+			clip.loop(loop);
 			clip.start();
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
